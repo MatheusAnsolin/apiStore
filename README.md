@@ -47,9 +47,3 @@ Para testar os padrões, acesse as seguintes URLs em seu navegador ou cliente de
 * **Testar o Observer**:
     `GET http://localhost:8080/test/observer`
     * Este endpoint simula a mudança de status de um pedido e dispara as notificações. O resultado é visível no console da aplicação.
-
-## Autores
-
-* [Nome do Aluno 1]
-* [Nome do Aluno 2]
-* [Nome do Aluno 3]
