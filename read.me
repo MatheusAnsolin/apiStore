@@ -1,0 +1,49 @@
+# Projeto de Padrões de Projeto - Vitrine Eletrônica
+
+[cite_start]Este projeto foi desenvolvido para a disciplina de **Engenharia de Software II** da Universidade Comunitária da Região de Chapecó (Unochapecó).  [cite_start]O objetivo é demonstrar a aplicação prática dos padrões de projeto **Factory Method** (Criacional) e **Observer** (Comportamental) no contexto de uma plataforma de vitrine eletrônica.
+
+## Tecnologias Utilizadas
+* Java 21
+* Spring Boot 3.x
+* Maven
+
+## Padrões Implementados
+
+### Factory Method (Criacional)
+[cite_start]O padrão Factory Method é aplicado para simplificar a criação de produtos com características heterogêneas, como `Camisas` e `Canecas`.  [cite_start]Ele delega a lógica de instanciação para subclasses de fábrica especializadas (`CamisaFactory`, `CanecaFactory`), o que promove um código extensível e facilita a adição de novos tipos de produtos sem alterar o código cliente.
+
+### Observer (Comportamental)
+[cite_start]O padrão Observer é utilizado para criar um mecanismo de notificação assíncrona.  [cite_start]Quando o estado de um objeto `Pedido` (o *Subject*) é alterado (ex: status muda para "Em Produção"), múltiplos `Observers` (`WhatsAppService`, `EmailService`) são notificados automaticamente.  [cite_start]Essa abordagem assegura o desacoplamento entre a lógica de negócio do pedido e os diferentes mecanismos de notificação.
+
+## Como Executar
+
+**Pré-requisitos:**
+* Java 21 (ou superior)
+* Maven 3.x
+
+**Passos:**
+1.  Clone este repositório:
+    ```bash
+    git clone <url-do-seu-repositorio>
+    ```
+2.  Navegue até a pasta do projeto:
+    ```bash
+    cd api
+    ```
+3.  Execute a aplicação com o Maven:
+    ```bash
+    mvn spring-boot:run
+    ```
+A API estará disponível em `http://localhost:8080`.
+
+## Endpoints para Teste
+
+Para testar os padrões, acesse as seguintes URLs em seu navegador ou cliente de API:
+
+* **Testar o Factory Method**:
+    `GET http://localhost:8080/test/factory`
+    * Este endpoint utiliza as fábricas para criar e retornar um JSON com diferentes tipos de produtos.
+
+* **Testar o Observer**:
+    `GET http://localhost:8080/test/observer`
+    * Este endpoint simula a mudança de status de um pedido e dispara as notificações. O resultado é visível no console da aplicação.
